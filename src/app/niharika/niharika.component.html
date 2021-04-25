@@ -1,0 +1,16 @@
+
+
+<div>
+  <div>
+    <input type="text" placeholder="enter name" [(ngModel)] = "name"><br>
+    <input type="text" placeholder="Roll Number" [(ngModel)] = "roll"><br>
+    <button name="Submit" (click)="onSubmit()">Submit</button>
+    <button name="Submit" (click)="onDelete()">Delete</button>
+    <button name="Submit" (click)="onUpdate()">Update</button>
+  </div>
+  <div *ngFor='let student of result'>
+    <h2>Name:{{student.name}}</h2>
+    <h2>roll :{{student.roll}}</h2>
+  </div>
+</div>
+
