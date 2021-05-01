@@ -10,11 +10,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 //import {MatInputModule} from '@angular/material/input';
 import {StudentService} from './student.service'
 import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NiharikaComponent
+    NiharikaComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
