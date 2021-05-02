@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card" style="top: 50px;">
+    <div style="padding-bottom: 10px;padding-top: 10px;">
+      <div class="row">
+       <div class="col-sm-4">
+        <button (click)="export()" class="btn btn-success"><i class="fas fa-file-download"></i>Export To Excel</button>
+       </div>
+       <div class="col-sm-4" #add>
+        <button class="btn btn-success" (click)="addStudent()" ><i class="fas fa-plus"></i>Add Student</button>
+       </div>
+      </div>
+     </div>
+    <table class="table table-striped" #epltable >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Roll Number</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentService.studentList; let indexOfelement=index">
+          <th scope="row">{{indexOfelement+1}}</th>
+          <td>{{student.name}}</td>
+          <td>{{student.rollNumber}}</td>
+          <td>{{student.emailId}}</td>
+          <td><i (click)="onEdit()" class="fas fa-pen"></i>
+              <i (click)="onDelete()" class="fas fa-trash"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

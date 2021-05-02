@@ -10,6 +10,8 @@ export class StudentService {
   refresh = new BehaviorSubject<boolean>(true);
   constructor( private http: HttpClient) { }
 
+  studentList = []
+
   addStudent(payload)
   {
     return this.http.post('http://localhost:3000/addStudent',payload)

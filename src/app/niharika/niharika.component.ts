@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { StudentService } from '../student.service';
 
+
+
 @Component({
   selector: 'app-niharika',
   templateUrl: './niharika.component.html',

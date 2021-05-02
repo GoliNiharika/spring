@@ -11,12 +11,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {StudentService} from './student.service'
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
+import { StudentListComponent } from './student-list/student-list.component';
+//import { ExcelService } from './services/excel.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NiharikaComponent,
-    TableComponent
+    TableComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
