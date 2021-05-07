@@ -22,21 +22,43 @@ export class TableComponent implements OnInit {
   password = ''
 
   student: any
-  result = []
-
+  isUpdate=false
   constructor(public router:Router, public studentService: StudentService) {
-
+    const studentData=this.router.getCurrentNavigation().extras.state
+     if(studentData)
+     {
+      this.name=studentData.name
+      this.rollNumber=studentData.roll
+      this.emailId=studentData.email
+      this.password=studentData.password
+      this.isUpdate=true
+     }
   }
 
 
   onSubmitForm(){
     this.student = {
+      roll: this.rollNumber,
       name: this.name,
-      rollNumber: this.rollNumber,
-      emailId: this.emailId,
+      email: this.emailId,
       password: this.password
     }
-    this.studentService.studentList.push(this.student)
+    //this.studentService.studentList.push(this.student)
+
+    if(this.isUpdate)
+    {
+      this.studentService.updateStudent(this.student).subscribe((result)=>{
+        console.log(result)
+        this.studentService.refresh.next(true)
+      });
+    }
+    else
+    {
+      this.studentService.addStudent(this.student).subscribe((result)=>{
+        console.log(result)
+        this.studentService.refresh.next(true)
+      });
+    }
 
 
     //this.studentEnrolled.emit(this.students)

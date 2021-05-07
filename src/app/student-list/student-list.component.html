@@ -21,13 +21,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let student of studentService.studentList; let indexOfelement=index">
+        <tr *ngFor="let student of result; let indexOfelement=index">
           <th scope="row">{{indexOfelement+1}}</th>
           <td>{{student.name}}</td>
-          <td>{{student.rollNumber}}</td>
-          <td>{{student.emailId}}</td>
-          <td><i (click)="onEdit()" class="fas fa-pen"></i>
-              <i (click)="onDelete()" class="fas fa-trash"></i>
+          <td>{{student.roll}}</td>
+          <td>{{student.email}}</td>
+          <td><i (click)="onEdit(student)" class="fas fa-pen"></i>
+              <i (click)="onDelete(student)" class="fas fa-trash"></i>
           </td>
         </tr>
       </tbody>

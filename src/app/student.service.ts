@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,18 +15,18 @@ export class StudentService {
 
   addStudent(payload)
   {
-    return this.http.post('http://localhost:3000/addStudent',payload)
+    return this.http.post(environment.ApiUrl+'/addStudent',payload)
   }
 
   getStudent(){
-    return this.http.get('http://localhost:3000/getStudent');
+    return this.http.get(environment.ApiUrl+'/getStudent');
   }
 
-  deleteStudent(roll1){
-  return this.http.delete('http://localhost:3000/deleteStudent',{headers: { roll : roll1}});
+  deleteStudent(roll){
+  return this.http.delete(environment.ApiUrl+'/deleteStudent',{params:{roll}});
   }
 
   updateStudent(payload){
-    return this.http.post('http://localhost:3000/updateStudent',payload);
+    return this.http.post(environment.ApiUrl+'/updateStudent',payload);
   }
 }

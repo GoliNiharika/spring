@@ -10,6 +10,7 @@ import * as xlsx from 'xlsx';
 })
 export class StudentListComponent implements OnInit {
 
+  result = []
     //studentList = JSON.parse(localStorage.getItem("studentListJson"))
   constructor(public router : Router, public studentService:StudentService) {
     //this.studentList=this.router.getCurrentNavigation().extras.state
@@ -28,15 +29,35 @@ export class StudentListComponent implements OnInit {
     this.router.navigate([' '])
    }
 
-   onEdit(){
-    console.log("Updating")
-   }
+   onEdit(student){
 
-   onDelete(){
-    console.log("Deleting")
+    this.router.navigate([" "],{state:student});
+    // this.data.name = this.name;
+    // this.data.roll = this.roll;
+    // this.studentService.updateStudent(this.data).subscribe((result) =>{
+    //   this.studentService.refresh.next(true);
+    // })
+  }
+
+   onDelete(student){
+    console.log(student.roll)
+    this.studentService.deleteStudent(student.roll).subscribe((result)=>{
+      this.studentService.refresh.next(true);
+    })
    }
   ngOnInit(): void {
-
+    this.studentService.refresh.subscribe(
+      data=>{
+        if(data)
+        {
+          this.studentService.getStudent().subscribe(
+            (result:any)=>{
+              this.result=result
+            }
+          )
+        }
+      }
+    )
   }
 
 }
