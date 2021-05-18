@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  ApiUrl: "http://localhost:3000",
+  ApiUrl: "https://springbackend6g.herokuapp.com",
   production: false
 };
 
