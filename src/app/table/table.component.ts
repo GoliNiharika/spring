@@ -25,6 +25,7 @@ export class TableComponent implements OnInit {
   isUpdate=false
   constructor(public router:Router, public studentService: StudentService) {
     const studentData=this.router.getCurrentNavigation().extras.state
+    console.log(studentData)
      if(studentData)
      {
       this.name=studentData.name

@@ -12,6 +12,12 @@ import {StudentService} from './student.service'
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { CellRenderer } from './CellRenderer';
+import { SortableJsComponent } from './sortable-js/sortable-js.component';
+
+import { SortablejsModule } from 'ngx-sortablejs'
+
 //import { ExcelService } from './services/excel.service';
 
 
@@ -20,7 +26,9 @@ import { StudentListComponent } from './student-list/student-list.component';
     AppComponent,
     NiharikaComponent,
     TableComponent,
-    StudentListComponent
+    StudentListComponent,
+    CellRenderer,
+    SortableJsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,8 @@ import { StudentListComponent } from './student-list/student-list.component';
     HttpClientModule,
      FormsModule,
     ReactiveFormsModule,
-
+    AgGridModule.withComponents([CellRenderer]),
+    SortablejsModule
   ],
   providers: [StudentService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

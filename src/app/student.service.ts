@@ -29,4 +29,8 @@ export class StudentService {
   updateStudent(payload){
     return this.http.post(environment.ApiUrl+'/updateStudent',payload);
   }
+
+  deleteMultipleStudents(roll){
+    return this.http.delete(environment.ApiUrl+'/deleteMultipleStudents',{params:{roll}});
+    }
 }

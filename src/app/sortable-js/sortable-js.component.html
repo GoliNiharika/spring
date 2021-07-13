@@ -1,0 +1,9 @@
+<div [sortablejs]="obj" [sortablejsOptions]="options">
+    <table *ngFor = 'let ob of obj'>
+      <tr class="cursor"><td>{{ob.sno}}</td><td>{{ob.name}}</td> <td>{{ob.roll}}</td></tr>
+    </table>
+</div>
+<div>
+  <input type="datetime-local" [(ngModel)]='time' (change)='onChange()'>
+  <p>{{time}}</p>
+</div>
