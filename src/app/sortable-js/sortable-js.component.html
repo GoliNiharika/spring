@@ -1,8 +1,8 @@
 <div>
-  <h5><strong>Rows gets auotmatically sorted when drages!</strong></h5>
+  <h5><strong>Rows gets auotmatically sorted when draged!</strong></h5>
 </div>
 <div [sortablejs]="obj" [sortablejsOptions]="options">
-    <table *ngFor = 'let ob of obj'>
+    <table class="perform" border="1" *ngFor = 'let ob of obj'>
       <tr class="cursor"><td>{{ob.sno}}</td><td>{{ob.name}}</td> <td>{{ob.roll}}</td></tr>
     </table>
 </div>
