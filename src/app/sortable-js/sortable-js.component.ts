@@ -25,7 +25,7 @@ export class SortableJsComponent implements OnInit {
       roll: 1
     },
     {sno:2,
-      name: "Piggy",
+      name: "Goli",
       roll: 4
     }
   ]
